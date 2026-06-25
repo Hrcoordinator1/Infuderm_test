@@ -1,0 +1,12 @@
+Upload service hero images here with these exact filenames:
+
+hydrafacial-hero.jpg
+microneedling-hero.jpg
+iv-therapy-hero.jpg
+glp1-hero.jpg
+laser-hero.jpg
+morpheus8-hero.jpg
+prp-prf-hero.jpg
+
+Recommended size: 1200x800px minimum, JPG format.
+Then in each service page, uncomment the <img> tag and remove the placeholder div.

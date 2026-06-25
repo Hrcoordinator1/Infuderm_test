@@ -1,0 +1,13 @@
+Upload team member photos here with these exact filenames:
+
+angelica-briceno.jpg
+kopila-pandey.jpg
+nataly-escobar.jpg
+erin-spangler.jpg
+karina-gonzalez.jpg
+lina-torres.jpg
+sarah-ensor.jpg
+lorena-mantilla.jpg
+dilpreet-sohi.jpg
+
+Then in each team member card, uncomment the <img> tag and remove the placeholder div.

@@ -1,0 +1,6 @@
+Upload the About page hero image here:
+
+about-hero.jpg
+
+Recommended: aesthetic/clinical injection image, 800x900px minimum.
+Then in about/index.html, uncomment the <img> tag and remove the placeholder div.

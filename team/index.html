@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meet Our Team | INFUDERM Clinic | Reston & Aldie, VA</title>
+  <meta name="description" content="Meet the expert team at INFUDERM Clinic — Board-Certified Nurse Practitioners, Registered Nurses, and Licensed Estheticians serving Reston and Aldie, Virginia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Jost:wght@300;400;500;600&family=EB+Garamond:ital,wght@1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black:      #0D0F14;
+      --obsidian:   #161820;
+      --surface:    #1E2028;
+      --border:     #2A2C35;
+      --gold:       #B8922A;
+      --gold-mid:   #D4AF5A;
+      --gold-light: #F0D990;
+      --cream:      #F5F0E8;
+      --muted:      #9A8F7E;
+      --font-display:'Cormorant Garamond', serif;
+      --font-body:  'Jost', sans-serif;
+      --font-italic:'EB Garamond', serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--cream);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 80px;
+      background: rgba(13,15,20,0.95);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 1px 0 rgba(184,146,42,0.2);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .nav-logo-mark { width: 38px; height: 38px; }
+    .nav-logo-mark svg { width: 100%; height: 100%; }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo-text span:first-child {
+      font-family: var(--font-display); font-size: 1.35rem; font-weight: 400;
+      letter-spacing: 0.18em;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 55%, var(--gold-mid) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .nav-logo-text span:last-child { font-size: 0.5rem; letter-spacing: 0.35em; color: var(--gold-mid); margin-top: 3px; }
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a {
+      font-size: 0.72rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--cream); text-decoration: none; opacity: 0.75;
+      transition: opacity 0.2s, color 0.2s; position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+      height: 1px; background: var(--gold); transform: scaleX(0);
+      transform-origin: left; transition: transform 0.3s;
+    }
+    .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--gold-mid); }
+    .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+    .nav-cta {
+      padding: 10px 28px; border: 1px solid var(--gold);
+      color: var(--gold-light) !important; font-size: 0.68rem !important;
+      letter-spacing: 0.22em !important; opacity: 1 !important;
+      border-radius: 2px; transition: background 0.3s, color 0.3s !important; white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--gold) !important; color: var(--black) !important; }
+    .nav-cta::after { display: none !important; }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 6px; background: none; border: none;
+    }
+    .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--gold); transition: transform 0.3s, opacity 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu {
+      display: none; position: fixed; top: 80px; left: 0; right: 0;
+      background: rgba(13,15,20,0.97); backdrop-filter: blur(20px);
+      padding: 32px 48px 40px; flex-direction: column; gap: 28px;
+      z-index: 999; border-top: 1px solid rgba(184,146,42,0.2);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream); text-decoration: none; opacity: 0.8; }
+    .mobile-menu a:last-child { border: 1px solid var(--gold); padding: 12px 24px; color: var(--gold-light); text-align: center; margin-top: 8px; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      margin-top: 80px;
+      padding: 88px 80px 80px;
+      position: relative; overflow: hidden;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 80% at 50% 40%, rgba(184,146,42,0.07) 0%, transparent 65%),
+        linear-gradient(170deg, #0D0F14 0%, #161820 60%, #0D0F14 100%);
+    }
+    .page-hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(184,146,42,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(184,146,42,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 100% at 50% 50%, black 30%, transparent 80%);
+    }
+    .page-hero-content { position: relative; z-index: 2; max-width: 680px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 28px;
+    }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--gold-mid); }
+    .breadcrumb span { color: var(--gold); }
+    .page-eyebrow { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .page-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 300; letter-spacing: 0.06em; line-height: 1.1; margin-bottom: 24px;
+    }
+    .page-title .accent {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .page-sub {
+      font-size: 0.9rem; color: var(--muted); max-width: 500px;
+      margin: 0 auto; line-height: 1.8;
+    }
+    .hero-rule {
+      width: 60px; height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 28px auto 0;
+    }
+
+    /* ── FEATURED LEADS (Angelica + Kopila) ── */
+    .lead-section {
+      padding: 80px 80px 0;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .leads-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    .lead-card {
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(145deg, rgba(30,32,40,0.97), rgba(22,24,32,0.99));
+      border: 1px solid rgba(184,146,42,0.25);
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .lead-card:hover {
+      border-color: rgba(184,146,42,0.45);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+    }
+    .lead-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold-mid), transparent);
+      z-index: 2;
+    }
+    .lead-photo {
+      height: 340px;
+      position: relative; overflow: hidden;
+      background: linear-gradient(145deg, var(--surface), var(--obsidian));
+      flex-shrink: 0;
+    }
+    .lead-photo img {
+      width: 100%; height: 100%; object-fit: cover; object-position: top center;
+      display: block;
+      pointer-events: none; -webkit-user-drag: none; user-select: none;
+      transition: transform 0.5s ease;
+    }
+    .lead-card:hover .lead-photo img { transform: scale(1.04); }
+    .lead-photo-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 16px;
+    }
+    .lead-photo::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 100px;
+      background: linear-gradient(to top, rgba(22,24,32,0.95), transparent);
+    }
+    /* Monogram avatar */
+    .avatar-mono {
+      width: 80px; height: 80px; border-radius: 50%;
+      background: linear-gradient(135deg, rgba(184,146,42,0.2), rgba(240,217,144,0.1));
+      border: 1px solid rgba(184,146,42,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-size: 1.8rem; font-weight: 300;
+      color: var(--gold-mid);
+    }
+    .avatar-mono-lg {
+      width: 90px; height: 90px; border-radius: 50%;
+      background: linear-gradient(135deg, rgba(184,146,42,0.15), rgba(240,217,144,0.08));
+      border: 1px solid rgba(184,146,42,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-size: 2rem; font-weight: 300;
+      color: var(--gold-mid);
+    }
+    .photo-hint {
+      font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--border);
+    }
+    .lead-info { padding: 28px 32px 36px; flex: 1; }
+    .lead-badge {
+      display: inline-block;
+      padding: 4px 14px;
+      border: 1px solid rgba(184,146,42,0.35);
+      border-radius: 100px;
+      font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 14px;
+      background: rgba(184,146,42,0.07);
+    }
+    .lead-name {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      font-weight: 300; letter-spacing: 0.06em; line-height: 1.15;
+      color: var(--cream); margin-bottom: 8px;
+    }
+    .lead-title {
+      font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--gold-mid); margin-bottom: 20px; line-height: 1.6;
+    }
+    .lead-divider {
+      width: 40px; height: 1px;
+      background: linear-gradient(to right, var(--gold), transparent);
+      margin-bottom: 18px;
+    }
+    .lead-bio {
+      font-size: 0.82rem; color: var(--muted); line-height: 1.85;
+    }
+
+    /* ── TEAM GRID ── */
+    .team-section {
+      padding: 72px 80px 100px;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .team-section-header {
+      margin-bottom: 48px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-eyebrow { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300; letter-spacing: 0.06em; line-height: 1.2; color: var(--cream);
+    }
+    .section-title .accent {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    /* ── TEAM CARD ── */
+    .team-card {
+      background: var(--obsidian);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      position: relative;
+    }
+    .team-card:hover {
+      border-color: rgba(184,146,42,0.35);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+      transform: translateY(-4px);
+    }
+    .team-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0; transition: opacity 0.3s; z-index: 2;
+    }
+    .team-card:hover::before { opacity: 1; }
+
+    /* Photo area */
+    .card-photo {
+      height: 260px;
+      position: relative; overflow: hidden;
+      background: linear-gradient(145deg, var(--surface), #12141a);
+    }
+    .card-photo img {
+      width: 100%; height: 100%; object-fit: cover; object-position: top center;
+      display: block;
+      pointer-events: none; -webkit-user-drag: none; user-select: none;
+      transition: transform 0.5s ease;
+      filter: brightness(0.9);
+    }
+    .team-card:hover .card-photo img { transform: scale(1.04); filter: brightness(1); }
+    .card-photo-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 14px;
+    }
+    /* Subtle gradient overlay on photo bottom */
+    .card-photo::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 80px;
+      background: linear-gradient(to top, var(--obsidian), transparent);
+    }
+
+    /* Card info */
+    .card-info { padding: 24px 26px 28px; }
+    .card-name {
+      font-family: var(--font-display);
+      font-size: 1.4rem; font-weight: 300; letter-spacing: 0.05em;
+      color: var(--cream); margin-bottom: 6px; line-height: 1.2;
+    }
+    .card-title {
+      font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--gold-mid); margin-bottom: 16px; line-height: 1.5;
+    }
+    .card-divider {
+      height: 1px;
+      background: linear-gradient(to right, rgba(184,146,42,0.3), transparent);
+      margin-bottom: 16px;
+    }
+    .card-bio {
+      font-size: 0.78rem; color: var(--muted); line-height: 1.75;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    /* Expand on hover */
+    .team-card:hover .card-bio {
+      -webkit-line-clamp: unset;
+    }
+    .card-read-more {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--gold); margin-top: 12px;
+      transition: gap 0.2s;
+    }
+    .team-card:hover .card-read-more { gap: 10px; }
+    .card-read-more svg { width: 12px; height: 12px; stroke: var(--gold); fill: none; stroke-width: 2; }
+
+    /* ── VALUES STRIP ── */
+    .values-strip {
+      background: var(--obsidian);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 44px 80px;
+      display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;
+    }
+    .value-item { text-align: center; }
+    .value-icon { width: 32px; height: 32px; margin: 0 auto 10px; color: var(--gold); }
+    .value-icon svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.5; }
+    .value-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+
+    /* ── CTA ── */
+    .cta-banner {
+      background: var(--black);
+      padding: 80px;
+      text-align: center;
+      position: relative; overflow: hidden;
+      border-top: 1px solid var(--border);
+    }
+    .cta-banner::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 100% at 50% 50%, rgba(184,146,42,0.05), transparent);
+    }
+    .cta-banner h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 300; letter-spacing: 0.08em;
+      color: var(--cream); margin-bottom: 16px; position: relative;
+    }
+    .cta-banner p { font-size: 0.88rem; color: var(--muted); max-width: 440px; margin: 0 auto 36px; position: relative; }
+    .cta-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; position: relative; }
+    .btn-primary {
+      padding: 16px 40px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-mid) 100%);
+      color: var(--black); font-family: var(--font-body);
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+      text-decoration: none; border-radius: 2px;
+      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: 0 8px 32px rgba(184,146,42,0.25);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(184,146,42,0.38); }
+    .btn-ghost {
+      padding: 15px 36px; border: 1px solid rgba(184,146,42,0.5);
+      color: var(--gold-light); font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+      text-decoration: none; border-radius: 2px;
+      transition: background 0.25s, border-color 0.25s, transform 0.25s;
+    }
+    .btn-ghost:hover { background: rgba(184,146,42,0.1); border-color: var(--gold); transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--obsidian); border-top: 1px solid var(--border); padding: 64px 80px 36px; }
+    .footer-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 56px; }
+    .footer-logo-text { font-family: var(--font-display); font-size: 1.6rem; font-weight: 300; letter-spacing: 0.18em; background: linear-gradient(135deg, var(--gold), var(--gold-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 6px; }
+    .footer-logo-sub { font-size: 0.55rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold-mid); margin-bottom: 18px; }
+    .footer-tagline { font-family: var(--font-italic); font-style: italic; font-size: 0.88rem; color: var(--muted); margin-bottom: 24px; }
+    .footer-social { display: flex; gap: 14px; }
+    .social-link { width: 36px; height: 36px; border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s, background 0.2s; color: var(--muted); text-decoration: none; }
+    .social-link:hover { border-color: var(--gold); background: rgba(184,146,42,0.1); color: var(--gold); }
+    .social-link svg { width: 15px; height: 15px; }
+    .footer-col h4 { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 0.8rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--gold-mid); }
+    .footer-contact-item { display: flex; gap: 10px; margin-bottom: 12px; align-items: flex-start; }
+    .footer-contact-item svg { width: 14px; height: 14px; stroke: var(--gold); fill: none; stroke-width: 1.5; flex-shrink: 0; margin-top: 3px; }
+    .footer-contact-item span { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+    .footer-contact-item a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-contact-item a:hover { color: var(--gold-mid); }
+    .footer-bottom { max-width: 1100px; margin: 0 auto; padding-top: 28px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p { font-size: 0.7rem; color: var(--muted); }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) {
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .leads-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 900px) {
+      .leads-grid { grid-template-columns: 1fr; }
+      .lead-photo { height: 300px; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .page-hero { padding: 60px 24px 56px; }
+      .lead-section { padding: 56px 24px 0; }
+      .team-section { padding: 56px 24px 72px; }
+      .team-grid { grid-template-columns: 1fr; }
+      .values-strip { padding: 40px 24px; gap: 32px; }
+      .cta-banner { padding: 64px 24px; }
+      footer { padding: 56px 24px 32px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .cta-actions { flex-direction: column; align-items: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg viewBox="0 0 40 50" fill="none">
+          <defs>
+            <linearGradient id="dg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#B8922A"/><stop offset="50%" stop-color="#F0D990"/><stop offset="100%" stop-color="#D4AF5A"/>
+            </linearGradient>
+          </defs>
+          <path d="M20 2 C20 2 4 20 4 32 C4 41.5 11 48 20 48 C29 48 36 41.5 36 32 C36 20 20 2 20 2Z" fill="url(#dg)" opacity="0.9"/>
+          <path d="M20 10 C20 10 8 24 8 33 C8 39 13 44 20 44" stroke="#0D0F14" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="nav-logo-text"><span>INFUDERM</span><span>Clinic</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/about/">About</a></li>
+      <li><a href="/services/">Price &amp; Treatment</a></li>
+      <li><a href="/team/" class="active">Meet Our Team</a></li>
+      <li><a href="/contact/">Contact Us</a></li>
+      <li><a href="/contact/#consultation-form" class="nav-cta">Book Free Consultation</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/about/">About</a>
+    <a href="/services/">Price &amp; Treatment</a>
+    <a href="/team/">Meet Our Team</a>
+    <a href="/contact/">Contact Us</a>
+    <a href="/contact/#consultation-form">Book Free Consultation</a>
+  </div>
+
+  <!-- ═══ PAGE HERO ═══ -->
+  <div class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-grid"></div>
+    <div class="page-hero-content">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span>›</span>
+        <span style="color:var(--cream);">Meet Our Team</span>
+      </div>
+      <p class="page-eyebrow">The People Behind the Precision</p>
+      <h1 class="page-title">Meet our <span class="accent">Team</span></h1>
+      <p class="page-sub">Expert care from a team that values safety, comfort, and natural results.</p>
+      <div class="hero-rule"></div>
+    </div>
+  </div>
+
+  <!-- ═══ FEATURED LEADS ═══ -->
+  <div class="lead-section">
+    <div class="leads-grid">
+
+      <!-- Angelica -->
+      <div class="lead-card reveal">
+        <div class="lead-photo">
+          <img src="/images/team/angelica-briceno.jpg" alt="Angelica Briceño" />
+        </div>
+        <div class="lead-info">
+          <span class="lead-badge">Nurse Practitioner</span>
+          <h2 class="lead-name">Angelica Briceño</h2>
+          <p class="lead-title">Master Injector | Aesthetic Medicine &amp; Wellness</p>
+          <div class="lead-divider"></div>
+          <p class="lead-bio">Angelica Briceño is a Doctor of Nursing Practice (DNP) and Board-Certified Nurse Practitioner, with foundational training as a Medical Doctor from the Central University of Venezuela. She holds advanced postgraduate education in Aesthetic Medicine from Tech University Medical School in Spain and Healthcare Informatics, reflecting a strong commitment to innovation, clinical precision, and evidence-based care.<br/><br/>With many years of experience in cosmetic dermatology, advanced medical lasers, and aesthetic injectables, Dr. Briceño delivers elevated, natural-looking results through a refined blend of science, technology, and artistic precision. Her expertise also includes advanced medical weight management using GLP-1–based therapies, supporting patients in achieving sustainable transformations as part of a comprehensive approach to aesthetics and wellness.</p>
+        </div>
+      </div>
+
+      <!-- Kopila -->
+      <div class="lead-card reveal" style="transition-delay:0.12s;">
+        <div class="lead-photo">
+          <img src="/images/team/kopila-pandey.jpg" alt="Kopila Sangroula Pandey" />
+        </div>
+        <div class="lead-info">
+          <span class="lead-badge">Nurse Practitioner</span>
+          <h2 class="lead-name">Kopila Sangroula Pandey</h2>
+          <p class="lead-title">MSN, AG-ACNP-BC · Expert Injector | Facial Balancing &amp; Natural Rejuvenation</p>
+          <div class="lead-divider"></div>
+          <p class="lead-bio">Kopila Sangroula Pandey is an Acute Care Nurse Practitioner with experience and expertise in aesthetics and wellness. She specializes in neurotoxin treatments, facial balancing, natural-looking aesthetic enhancements, and personalized treatment plans designed to refresh and rejuvenate while preserving each patient's unique beauty.<br/><br/>With a background in acute care, allergy, immunology, and aesthetic medicine, Kopila combines clinical expertise with an artistic eye to create balanced, harmonious results. Her philosophy focuses on enhancing natural features, promoting healthy skin, and helping patients look refreshed, confident, and authentically themselves.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ TEAM GRID ═══ -->
+  <div class="team-section">
+    <div class="team-section-header reveal">
+      <p class="section-eyebrow">Our Specialists</p>
+      <h2 class="section-title">The <span class="accent">INFUDERM</span> Team</h2>
+    </div>
+    <div class="team-grid">
+
+      <!-- Lorena -->
+      <div class="team-card reveal" style="transition-delay:0.16s;">
+        <div class="card-photo">
+          <img src="/images/team/lorena-mantilla.jpg" alt="Lorena Mantilla" />
+        </div>
+        <div class="card-info">
+          <h3 class="card-name">Lorena Mantilla</h3>
+          <p class="card-title">Master Esthetician</p>
+          <div class="card-divider"></div>
+          <p class="card-bio">Lorena Mantilla is a Master Esthetician helping clients achieve healthier, more radiant skin. Specializing in microneedling, she focuses on improving skin texture, reducing the appearance of scars, and promoting overall skin rejuvenation. She is dedicated to helping every client feel confident and comfortable through personalized, results-driven treatments.</p>
+          <div class="card-read-more">
+            <span>Hover to read more</span>
+            <svg viewBox="0 0 12 12"><path d="M2 6h8M7 3l3 3-3 3"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nataly -->
+      <div class="team-card reveal" style="transition-delay:0.08s;">
+        <div class="card-photo">
+          <img src="/images/team/nataly-escobar.jpg" alt="Nataly Escobar" />
+        </div>
+        <div class="card-info">
+          <h3 class="card-name">Nataly Escobar</h3>
+          <p class="card-title">Registered Nurse</p>
+          <div class="card-divider"></div>
+          <p class="card-bio">Nataly Escobar is a Registered Nurse based in Reston, VA. She graduated from the University of Virginia School of Nursing in 2019 and has over six years of experience in critical care, outpatient surgery, and dermatology. Nataly is passionate about helping patients feel their best inside and out while providing customized treatments in a relaxing and nurturing environment.</p>
+          <div class="card-read-more">
+            <span>Hover to read more</span>
+            <svg viewBox="0 0 12 12"><path d="M2 6h8M7 3l3 3-3 3"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Erin -->
+      <div class="team-card reveal" style="transition-delay:0.16s;">
+        <div class="card-photo">
+          <img src="/images/team/erin-spangler.jpg" alt="Erin Spangler" />
+        </div>
+        <div class="card-info">
+          <h3 class="card-name">Erin Spangler</h3>
+          <p class="card-title">Registered Nurse</p>
+          <div class="card-divider"></div>
+          <p class="card-bio">Erin Spangler is a Licensed Registered Nurse with 14 years of experience. Her goal is to help patients feel their best, enjoy their IV infusion experience, and leave feeling better than when they came in.</p>
+          <div class="card-read-more">
+            <span>Hover to read more</span>
+            <svg viewBox="0 0 12 12"><path d="M2 6h8M7 3l3 3-3 3"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Karina -->
+      <div class="team-card reveal" style="transition-delay:0.24s;">
+        <div class="card-photo">
+          <img src="/images/team/karina-gonzalez.jpg" alt="Karina Gonzalez" />
+        </div>
+        <div class="card-info">
+          <h3 class="card-name">Karina Gonzalez</h3>
+          <p class="card-title">Registered Nurse</p>
+          <div class="card-divider"></div>
+          <p class="card-bio">Karina Gonzalez, RN, is a dedicated Registered Nurse with over three years of nursing experience and a passion for helping individuals look and feel their best. She is committed to providing safe, personalized care that enhances confidence and overall well-being, and takes pride in building trusting relationships while helping clients achieve their unique aesthetic goals.</p>
+          <div class="card-read-more">
+            <span>Hover to read more</span>
+            <svg viewBox="0 0 12 12"><path d="M2 6h8M7 3l3 3-3 3"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lina -->
+      <div class="team-card reveal" style="transition-delay:0.08s;">
+        <div class="card-photo">
+          <img src="/images/team/lina-torres.jpg" alt="Lina Torres" />
+        </div>
+        <div class="card-info">
+          <h3 class="card-name">Lina Torres</h3>
+          <p class="card-title">Registered Nurse</p>
+          <div class="card-divider"></div>
+          <p class="card-bio">Lina Torres brings over 10 years of healthcare experience and more than three years as a Registered Nurse. Her background in dermatology, oncology, and procedural nursing provides a strong foundation in patient care, treatment administration, and clinical safety. She is committed to delivering personalized, evidence-based treatments that enhance confidence and support overall well-being.</p>
+          <div class="card-read-more">
+            <span>Hover to read more</span>
+            <svg viewBox="0 0 12 12"><path d="M2 6h8M7 3l3 3-3 3"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sarah -->
+      <div class="team-card reveal" style="transition-delay:0.16s;">
+        <div class="card-photo">
+          <img src="/images/team/sarah-ensor.jpg" alt="Sarah Ensor" />
+        </div>
+        <div class="card-info">
+          <h3 class="card-name">Sarah Ensor</h3>
+          <p class="card-title">Registered Nurse</p>
+          <div class="card-divider"></div>
+          <p class="card-bio">Sarah Ensor, RN, brings a strong clinical background and a patient-centered approach to wellness and aesthetic care. She is committed to providing safe, compassionate, and personalized treatments that help clients feel comfortable, supported, and confident throughout their experience at INFUDERM.</p>
+          <div class="card-read-more">
+            <span>Hover to read more</span>
+            <svg viewBox="0 0 12 12"><path d="M2 6h8M7 3l3 3-3 3"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dilpreet -->
+      <div class="team-card reveal" style="transition-delay:0.24s;">
+        <div class="card-photo">
+          <img src="/images/team/dilpreet-sohi.jpg" alt="Dilpreet Sohi" />
+        </div>
+        <div class="card-info">
+          <h3 class="card-name">Dilpreet Sohi</h3>
+          <p class="card-title">Licensed Cosmetologist</p>
+          <div class="card-divider"></div>
+          <p class="card-bio">Dilpreet Sohi is a Licensed Cosmetologist with a passion for client care, beauty, and wellness. She strives to create a relaxing experience where every client feels valued, refreshed, and confident after each service.</p>
+          <div class="card-read-more">
+            <span>Hover to read more</span>
+            <svg viewBox="0 0 12 12"><path d="M2 6h8M7 3l3 3-3 3"/></svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ VALUES STRIP ═══ -->
+  <div class="values-strip">
+    <div class="value-item reveal">
+      <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+      <p class="value-label">Safety First</p>
+    </div>
+    <div class="value-item reveal" style="transition-delay:0.08s;">
+      <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div>
+      <p class="value-label">Evidence-Based</p>
+    </div>
+    <div class="value-item reveal" style="transition-delay:0.16s;">
+      <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></div>
+      <p class="value-label">Patient-Centered</p>
+    </div>
+    <div class="value-item reveal" style="transition-delay:0.24s;">
+      <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg></div>
+      <p class="value-label">Natural Results</p>
+    </div>
+    <div class="value-item reveal" style="transition-delay:0.32s;">
+      <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg></div>
+      <p class="value-label">Medical Precision</p>
+    </div>
+  </div>
+
+  <!-- ═══ CTA ═══ -->
+  <div class="cta-banner reveal">
+    <h2>Ready to Meet the Team?</h2>
+    <p>Book a free consultation and experience the INFUDERM difference for yourself.</p>
+    <div class="cta-actions">
+      <a href="/contact/#consultation-form" class="btn-primary">Book Free Consultation</a>
+      <a href="/services/" class="btn-ghost">View Treatments</a>
+    </div>
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <p class="footer-logo-text">INFUDERM</p>
+        <p class="footer-logo-sub">Clinic</p>
+        <p class="footer-tagline">Medical Precision. Absolute Safety.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/infudermva/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/services/">Price &amp; Treatment</a></li>
+          <li><a href="/team/">Meet Our Team</a></li>
+          <li><a href="/contact/">Contact Us</a></li>
+          <li><a href="/contact/#consultation-form">Book Free Consultation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services/iv-therapy-wellness-injections-northern-virginia/">IV Therapy &amp; Wellness</a></li>
+          <li><a href="/services/hydrafacial/">HydraFacial</a></li>
+          <li><a href="/services/microneedling-northern-virginia/">Microneedling</a></li>
+          <li><a href="/services/laser-hair-removal/">Laser Hair Removal</a></li>
+          <li><a href="/services/medical-weight-loss-glp-1-injections-northern-virginia/">GLP-1 Weight Loss</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <span><a href="mailto:Info@InfudermVA.com">Info@InfudermVA.com</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <span><a href="tel:+15713759180">(571) 375-9180</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span>Reston, VA · Aldie, VA</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 INFUDERM Clinic. All rights reserved.</p>
+      <p>Results may vary. All treatments require consultation and provider evaluation.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }));
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

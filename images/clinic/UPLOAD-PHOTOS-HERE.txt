@@ -1,0 +1,14 @@
+Upload clinic photos here for the homepage gallery:
+
+Reston office (3 photos):
+  reston-1.jpg
+  reston-2.jpg
+  reston-3.jpg
+
+Aldie office (3 photos):
+  aldie-1.jpg
+  aldie-2.jpg
+  aldie-3.jpg
+
+Then in index.html, replace each photo-placeholder div with:
+<img src="/images/clinic/reston-1.jpg" alt="INFUDERM Reston Clinic" />
